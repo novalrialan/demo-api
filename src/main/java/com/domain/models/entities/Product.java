@@ -1,5 +1,6 @@
 package com.domain.models.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,11 +14,13 @@ public class Product implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.IDENTITY) // membuat primary key generation autoincrement
   private Long id;
 
+  @Column(name = "product_name", length = 100) // cara mengubah nama field name berserta panjang datanya
   private String name;
 
+  @Column(name = "product_description", length = 500) // cara mengubah nama field name berserta panjang datanya
   private String description;
 
   private double price;
